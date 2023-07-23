@@ -1,4 +1,4 @@
 package com.system.TourBookingSystem.model;
 
-public class packages {
+public class PackageRepository {
 }

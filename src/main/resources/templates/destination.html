@@ -8,5 +8,12 @@
 <ul>
   <li th:each="destination : ${destinations}" th:text="${destination.name}"></li>
 </ul>
+
+<h2>Add New Destination</h2>
+<form action="/destinations" method="post">
+  <label for="name">Destination Name:</label>
+  <input type="text" id="name" name="name" required>
+  <button type="submit">Add Destination</button>
+</form>
 </body>
 </html>

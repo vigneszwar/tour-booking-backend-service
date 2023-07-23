@@ -14,5 +14,5 @@ public class Destination {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    // other fields, getters, and setters
+
 }

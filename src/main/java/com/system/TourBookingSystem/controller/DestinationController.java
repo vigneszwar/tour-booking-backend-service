@@ -3,11 +3,15 @@ package com.system.TourBookingSystem.controller;
 import com.system.TourBookingSystem.model.Destination;
 import com.system.TourBookingSystem.service.DestinationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 
-@RestController
-@RequestMapping("/destinations")
+import java.util.List;
+
+@Controller
 public class DestinationController {
+
     private final DestinationService destinationService;
 
     @Autowired
@@ -15,8 +19,10 @@ public class DestinationController {
         this.destinationService = destinationService;
     }
 
-    @PostMapping
-    public Destination createDestination(@RequestBody Destination destination) {
-        return destinationService.saveDestination(destination);
+    @GetMapping("/destinations")
+    public String showDestinations(Model model) {
+        List<Destination> destinations = destinationService.getAllDestinations();
+        model.addAttribute("destinations", destinations);
+        return "destination";
     }
 }

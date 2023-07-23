@@ -24,17 +24,17 @@ public class TourBookingSystemApplication {
 
 		ResponseEntity<String> response = rest.getForEntity(baseurl + "/adventure", String.class);
 		String adventureImageUrl = response.getBody();
-//        System.out.print("Adventure Image URL: " + adventureImageUrl);
+        System.out.print("Adventure Image URL: " + adventureImageUrl);
 
 		// Call the "Nature" method from activityconfiguration class
 		ResponseEntity<String> natureResponse = rest.getForEntity(baseurl + "/nature", String.class);
 		String natureImageUrl = natureResponse.getBody();
-//        System.out.println("Nature Image URL: " + natureImageUrl);
+        System.out.println("Nature Image URL: " + natureImageUrl);
 
 		// Call the "HillStation" method from activityconfiguration class
 		ResponseEntity<String> hillsResponse = rest.getForEntity(baseurl + "/hills", String.class);
 		String hillsImageUrl = hillsResponse.getBody();
-//        System.out.println("Hill Station Image URL: " + hillsImageUrl);
+        System.out.println("Hill Station Image URL: " + hillsImageUrl);
 	}
 	@Bean
 	public RestTemplate rest(RestTemplateBuilder builder){
